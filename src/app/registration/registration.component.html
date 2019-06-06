@@ -1,0 +1,91 @@
+﻿
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2> Registration Form </h2>
+                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" novalidate>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" formControlName="firstName" [ngClass]="{'is-invalid': submitted && fb.firstName.errors}" />
+                            <div class="invalid-feedback" *ngIf="submitted &&fb.firstName.errors">
+                                <p *ngIf="fb.firstName.errors.required">First Name is required</p>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && fb.lastName.errors }" />
+                            <div class="invalid-feedback" *ngIf="submitted &&fb.lastName.errors">
+                                <p *ngIf="fb.lastName.errors.required">Last Name is required</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label>Email</label>
+                            <input type="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && fb.email.errors }" />
+                            <div class="invalid-feedback" *ngIf="submitted &&fb.email.errors">
+                                <p *ngIf="fb.email.errors.required">Email is required</p>
+                                <p *ngIf="fb.email.errors.email">Please provide a valid email address</p>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Qualification</label>
+                            <select class="form-control" name="qualification" formControlName="qualification">
+                                <option *ngFor="let d of degrees" [value]="d">{{d}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Website</label>
+                        <input type="url" class="form-control" formControlName="url" [ngClass]="{ 'is-invalid': submitted && fb.url.errors }" />
+                        <div class="invalid-feedback" *ngIf="submitted &&fb.url.errors">
+                            <p *ngIf="fb.url.errors.pattern">Please enter valid URL </p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class=" form-group col-md-8">
+                            <label>Mobile</label>
+                            <input type="url" class="form-control" formControlName="mobile" [ngClass]="{ 'is-invalid': submitted && fb.mobile.errors }" />
+                            <div class="invalid-feedback" *ngIf="submitted&&fb.mobile.errors">
+                                <p *ngIf="fb.mobile.errors.minlength">Mobile number should be atleast 8 numbers</p>
+                                <p *ngIf="fb.mobile.errors.maxlength">Mobile number should not be more than 12 numbers</p>
+                                <p *ngIf="fb.mobile.errors.pattern">Please enter a valid mobile number</p>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>DOB </label>
+                            <input type="datetime-local" class="form-control" formControlName="dateOfBirth" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Username</label>
+                            <input type="text" class="form-control" formControlName="username" [ngClass]="{ 'is-invalid': submitted && fb.username.errors }" />
+                            <div class="invalid-feedback" *ngIf="submitted &&fb.username.errors">
+                                <p *ngIf="fb.username.errors.required">Username is required</p>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Password</label>
+                            <input type="password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && fb.password.errors }" />
+                            <div class="invalid-feedback" *ngIf="submitted &&fb.password.errors">
+                                <p *ngIf="fb.password.errors.required">Password number is required</p>
+                                <p *ngIf="fb.password.errors.minlength">Password must be at least 6 characters</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                    <div>
+                        <input class="btn btn-primary" type="submit" value="Register" />
+                    </div>
+                    <!--<pre>{{registrationForm.value|json}}</pre>
+                    <pre>{{registrationForm.status|json}}</pre>-->
+                </form>
+            </div>
+        </div>
+    </div>

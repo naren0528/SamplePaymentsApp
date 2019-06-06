@@ -1,0 +1,23 @@
+﻿<h3>Send Money</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            <form class="form-group">
+                <div class="form-group">
+                    <label>Input Amount</label>
+                    <input type="number" [(ngModel)]="amount" name="amount" class="form-control" required />
+                </div>
+                <div class="form-group ">                    
+                    <label>Select User</label>
+                    <select class="form-control"   [(ngModel)]="user"  name="user" >
+                        <option *ngFor="let user of users" [value]="user.username">{{user.firstName}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="button" class="btn btn-primary" value="Send Money" (click)="sendMoney()" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

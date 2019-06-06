@@ -1,0 +1,25 @@
+﻿body {
+    color: #888;
+}
+
+div.container {
+    margin-top: 50px;
+}
+
+h3 {
+    margin-top: 100px;
+    margin-left: 200px;
+    color: #888;
+}
+h4 {
+    margin-top: 100px;
+    
+    color: #888;
+}
+
+.table table-bordered{
+    margin-top:10px;
+}
+table {
+    color: darkgrey
+}

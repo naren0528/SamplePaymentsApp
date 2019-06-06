@@ -1,0 +1,23 @@
+﻿<h3>Transaction History</h3>
+<div >
+    <table class="table table-bordered">
+        <thead>
+            <tr class="col-md-8">
+                <th scope="col">#</th>
+                <th scope="col">Sender Username</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Reciever Username</th>
+                <th scope="col">Date of Transaction</th>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of Transactions;  index as i" class="col-md-4">
+                <td>{{i+1}}</td>
+                <td>{{u.senderName}}</td>
+                <td>{{u.amount}}</td>
+                <td>{{u.username}}</td>
+                <td>{{u.date|date:'medium'}}</td>                                
+            </tr>
+        </tbody>
+    </table>
+    </div>

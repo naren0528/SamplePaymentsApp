@@ -1,0 +1,29 @@
+﻿
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2>Login</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && fb.username.errors }" />
+                        <div *ngIf="submitted && fb.username.errors" class="invalid-feedback">
+                            <div *ngIf="fb.username.errors.required">Username is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && fb.password.errors }" />
+                        <div *ngIf="submitted && fb.password.errors" class="invalid-feedback">
+                            <div *ngIf="fb.password.errors.required">Password is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button  class="btn btn-primary">Login</button>
+                        <a [routerLink]="['/register']" class="btn btn-link">Register</a>                        
+                    </div>                    
+                </form>
+            </div>
+        </div>
+    </div>

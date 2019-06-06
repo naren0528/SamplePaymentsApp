@@ -1,0 +1,16 @@
+﻿<h3>Load Money</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <form class="form-group">
+                    <div class="form-group">                        
+                        <input type="number" [(ngModel)]="amount" name="amount" id="amount" class="form-control" pattern="[0-9]" required/>
+                    </div>
+                    <div class="form-group">
+                        <input type="button" class="btn btn-primary" (click)="addMoney()" value="Add Money" />
+                    </div>
+                </form>                
+            </div>
+        </div>
+    </div>
+

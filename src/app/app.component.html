@@ -1,0 +1,35 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Simple Payments Application</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/dashboard']">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/loadMoney']">Load Money</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/sendMoney']">Send Money</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/transactions']">Transactions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/users']">Users</a>
+            </li>
+        </ul>
+            </div>
+    </nav>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 offset-2">
+
+                        <router-outlet></router-outlet>
+                    </div>
+                    <a [routerLink]="['/login']">Logout</a>
+                </div>
+            </div>
+            
